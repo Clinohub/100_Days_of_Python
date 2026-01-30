@@ -22,8 +22,8 @@ Some days may be combined when projects span multiple days.
 - [X] Day 11
 - [X] Day 12
 - [X] Day 13
-- [ ] Day 14
-- [ ] Day 15
+- [x] Day 14
+- [x] Day 15
 - [ ] Day 16
 - [ ] Day 17
 - [ ] Day 18
