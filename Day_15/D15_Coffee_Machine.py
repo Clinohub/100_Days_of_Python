@@ -71,11 +71,6 @@ def main(water,milk,coffee,money):
         main(water,milk,coffee,money)
         return
 
-    water -= MENU[order]['ingredients']['water']
-    if order in {'latte', 'cappuccino'}:
-        milk -= MENU[order]['ingredients']['milk']
-    coffee -= MENU[order]['ingredients']['coffee']
-
     print("Please insert coins.")
     amt = []
     denominations = ['quarters', 'dimes', 'nickels', 'pennies']
@@ -88,6 +83,11 @@ def main(water,milk,coffee,money):
         print("Sorry, that's not enough money. Money refunded.")
         main(water,milk,coffee,money)
         return
+    
+    water -= MENU[order]['ingredients']['water']
+    if order in {'latte', 'cappuccino'}:
+        milk -= MENU[order]['ingredients']['milk']
+    coffee -= MENU[order]['ingredients']['coffee']
 
     money += round(MENU[order]['cost'], 2)
     change = round((total_amt - MENU[order]['cost']), 2)
