@@ -116,4 +116,4 @@ Some days may be combined when projects span multiple days.
 - Combined days are grouped into a single folder (e.g. `Day 1-14`)
 - I won't commit each and every day's project
 - Each folder may contain code, assets, and a mini README
-
+- There are also some challenges apart from the daily challenges 
