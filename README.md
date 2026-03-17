@@ -28,8 +28,8 @@ Some days may be combined when projects span multiple days.
 - [x] Day 17
 - [x] Day 18
 - [x] Day 19
-- [ ] Day 20
-- [ ] Day 21
+- [x] Day 20
+- [x] Day 21
 - [ ] Day 22
 - [ ] Day 23
 - [ ] Day 24
@@ -115,5 +115,5 @@ Some days may be combined when projects span multiple days.
 ## 📝 Notes
 - Combined days are grouped into a single folder (e.g. `Day 1-14`)
 - I won't commit each and every day's project
-- Each folder may contain code, assets, and a mini README
+- Each folder may contain code, assets, and a README
 - There are also some challenges apart from the daily challenges 
