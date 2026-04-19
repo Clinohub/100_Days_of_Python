@@ -1,7 +1,8 @@
 #mit6_100l_f22_ex11
 
 def remove_and_sort(Lin, k):
-    """Lin is a list of ints
+    """
+    Lin is a list of ints
     k is an int >= 0
     Mutates Lin to remove the first k elements in Lin and
     then sorts the remaining elements in ascending order.

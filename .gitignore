@@ -1,3 +1,9 @@
-# VIM temp and recovery files
-*.swp
-*.swo
+# This is local .gitignore for 100_Days_of_Python repo
+
+# Compiled Python ByteCode
+__pycache__/
+*.py[cod]
+
+# Repo Notes
+Notes.md
+A_Must_Read.txt
