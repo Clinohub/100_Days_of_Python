@@ -9,13 +9,16 @@ class Score(Turtle):
         self.color("white")
         self.hideturtle()
         self.penup()
-        self.sety(400 - self.padding)
+        self.sety(300 - self.padding)
         self.left_points = left_points
         self.right_points = right_points
         self.text = str(self.left_points) + "     " + str(self.right_points)
-        self.write(self.text, move=False, align='center', font=('Arial', 50, 'bold'))
+        self.write(self.text, move=False, align='center', font=('Courier', 50, 'bold'))
 
-        
+    def adjust_score(self, left = 0, right = 0):
+        self.left_points += left
+        self.right_points += right
+
     def win(self):
         self.home()
         self.write("YOU WIN", align='center', font=('Arial', 20, 'normal'))
