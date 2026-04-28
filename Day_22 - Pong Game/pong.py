@@ -1,3 +1,4 @@
+
 from turtle import Turtle
 import random
 
@@ -13,3 +14,8 @@ class Pong(Turtle):
 
     def move(self):
         self.fd(10)
+
+    def bounce(self):
+        # no bounce if pong is almost parallel to paddle
+        if self.heading() < 87 and self.heading() > 93 or self.heading < 267 and self.heading() > 273: 
+            self.seth(360 - self.heading())
