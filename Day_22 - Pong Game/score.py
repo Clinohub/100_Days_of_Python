@@ -1,15 +1,15 @@
+
 from turtle import Turtle
 
 class Score(Turtle):
     padding = 70
 
-    def __init__(self, bound, left_points=0, right_points=0):
+    def __init__(self, left_points=0, right_points=0):
         super().__init__()
         self.color("white")
         self.hideturtle()
         self.penup()
-        self.bound = bound
-        self.sety(self.bound - self.padding)
+        self.sety(400 - self.padding)
         self.left_points = left_points
         self.right_points = right_points
         self.text = str(self.left_points) + "     " + str(self.right_points)
@@ -32,12 +32,11 @@ class Score(Turtle):
 
 class Net(Turtle):
 
-    def __init__(self, limit):
+    def __init__(self):
         super().__init__()
         self.color("white")
         self.penup()
-        self.limit = limit
-        self.sety(self.limit * -1)
+        self.sety(400 * -1)
         self.setheading(90)
         self.net_line()
         
