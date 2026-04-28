@@ -1,3 +1,8 @@
+# Pong Game: The famous Arcade game
+
+# 100 Days of Code ! Day 22
+
+
 from turtle import Turtle, Screen
 from paddle import Paddle
 from pong import Pong
@@ -8,7 +13,7 @@ screen = Screen()
 
 screen.setup(width=800, height=600, startx=None, starty=None)
 screen.bgcolor("black")
-screen.title("Pong: The famous Arcade game")
+screen.title("Pong")
 screen.tracer(0) # Turns off animation
 
 right_paddle = Paddle(380)
@@ -28,16 +33,14 @@ pong.seth(random.randint(-36, 36))
 
 while True:
     time.sleep(0.1)
+    
     # updates the screen when animation is turned off
     screen.update()
     pong.move()
 
-    # define how ball bounces of walls
+    # define where the ball bounces of walls
     if pong.ycor() > 290 or pong.ycor() < -290:
-        if pong.heading() != 90 or pong.heading() != 270:
-            if pong.heading() > 216 and pong.heading() < 324 or pong.heading() > 36 and pong.heading() < 144:
-                bounce = 360 - pong.heading()
-                pong.seth(bounce)
+        pong.bounce()
         
              
     
