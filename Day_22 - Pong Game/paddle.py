@@ -15,11 +15,11 @@ class Paddle(Turtle):
     def move_up(self):
         up = self.ycor()
         if up <= 250:
-            up += 20
+            up += 30
             self.sety(up)
 
     def move_down(self):
         down = self.ycor()
         if down >= -250:
-            down -= 20
+            down -= 30
             self.sety(down)
