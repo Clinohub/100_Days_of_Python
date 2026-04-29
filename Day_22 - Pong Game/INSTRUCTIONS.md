@@ -18,3 +18,9 @@ The game is played by controlling either of the paddles to interact with the pon
     "w" key to move upwards
     "s" key to move downwards
 ```
+
+By default, the right paddle starts the game
+The speed of pong increases as it is by the paddle , then eventually slows and attain a steady speed
+If a paddle misses the pong, it increases the opponent's score and the opponent serves the pong
+
+> ENJOY !!!

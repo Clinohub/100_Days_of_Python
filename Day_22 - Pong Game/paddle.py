@@ -1,7 +1,11 @@
 
 from turtle import Turtle
+from HEADER import Header
+
+header = Header()
 
 class Paddle(Turtle):
+    limit = header.SCREENSIZE_HEIGHT / 2 - header.OFFSET * 2
     
     def __init__(self, starting_pos):
         super().__init__()
@@ -14,12 +18,12 @@ class Paddle(Turtle):
 
     def move_up(self):
         up = self.ycor()
-        if up <= 250:
-            up += 30
+        if up <= self.limit:
+            up += header.PADDLE_PACE
             self.sety(up)
 
     def move_down(self):
         down = self.ycor()
-        if down >= -250:
-            down -= 30
+        if down >= self.limit * -1:
+            down -= header.PADDLE_PACE
             self.sety(down)

@@ -1,6 +1,9 @@
 
 from turtle import Turtle
+from HEADER import Header
 import random
+
+header = Header()
 
 class Pong(Turtle):
 
@@ -11,10 +14,11 @@ class Pong(Turtle):
         self.color('white')
         self.penup()
         self.reset()
-        self.speed(10)
+
 
     def move(self):
-        self.fd(10)
+        self.fd(header.PONG_PACE)
+
 
     def wall_bounce(self, heading):
         # no bounce if pong is almost parallel to paddle
@@ -26,16 +30,15 @@ class Pong(Turtle):
         
         if heading >= 93 and heading <= 267: # 93 - 267
             self.seth(360 - heading)
-            
-            
+             
 
     def paddle_bounce(self):
         self.seth(180 - self.heading())
 
+
     def reset(self, serving = "right"):
         self.home() 
-        #self.drift = random.randint(-36, 37)
-        self.drift = 0
+        self.drift = random.randint(header.HIGH_RIGHT_ANGLE * -1, header.HIGH_RIGHT_ANGLE)
 
         if serving == "right":
             self.seth(self.drift)
