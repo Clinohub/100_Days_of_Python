@@ -4,6 +4,9 @@
 __pycache__/
 *.py[cod]
 
+# Python virtual environment
+.venv/
+
 # Repo Notes
 Notes.md
 A_Must_Read.txt
