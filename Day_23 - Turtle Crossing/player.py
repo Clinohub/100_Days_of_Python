@@ -1,10 +1,9 @@
 
 from turtle import Turtle
-from main import HEIGHT,OFFSET
 
-STARTING_POSITION = (0, HEIGHT//-2 + OFFSET)
+STARTING_POSITION = (0, -280)
 MOVE_DISTANCE = 10
-FINISH_LINE_Y = HEIGHT//2 - OFFSET
+FINISH_LINE_Y = 280
 
 class Player(Turtle):
 
@@ -15,3 +14,12 @@ class Player(Turtle):
         self.penup()
         self.goto(STARTING_POSITION)
         self.seth(90)
+
+
+    def cross(self):
+        if self.ycor() < 275:
+            self.forward(MOVE_DISTANCE)
+
+
+    def reset_pos(self):
+        self.goto(STARTING_POSITION)
