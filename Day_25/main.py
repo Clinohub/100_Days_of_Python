@@ -44,18 +44,18 @@ while len(guess_states) < 50:
             game_write.write(f"{state}", False, "center", ("Helvetica", 7, "normal"))
 
 states_to_learn = {
-    "missed_states":[]
+    "missed_states": [
+        us_states for us_states in us_states.state.values if us_states not in guess_states
+    ] # list comprehension
 }
-for us_state in us_states.state.values:
-    if us_state not in guess_states:
-        states_to_learn["missed_states"].append(us_state)
+# for us_state in us_states.state.values:
+#     if us_state not in guess_states:
+#         states_to_learn["missed_states"].append(us_state)
 
-# if empty/(true = not False(False value=None, 0, "", [], {}))
-if not states_to_learn["missed_states"]:
+# if empty/(true = not False(False value=None, 0, "", [], {}, non existing key/value))
+if not states_to_learn.get("missed_states"):
     with open("./states_to_learn.csv", 'w') as  empty:
         empty.write("Congratulations! On U.S. States Mastery.\n")
 else:
     df = pandas.DataFrame(states_to_learn)
     df.to_csv("./states_to_learn.csv", index=False)
-
-print(states_to_learn)
