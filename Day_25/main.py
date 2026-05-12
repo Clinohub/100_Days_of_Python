@@ -24,10 +24,13 @@ while len(guess_states) < 50:
         title=f"{len(guess_states)}/50 Correct States",
         prompt="What's another state's name?"
     )
-    answer_state = answer.strip()
+    answer_state = answer.strip().lower()
+
+    if answer_state == "exit" or answer_state == 'logout':
+        break
 
     for state in us_states["state"].values:
-        if state.lower() == answer_state.lower():
+        if state.lower() == answer_state:
             if state in guess_states:
                 break
 
@@ -40,4 +43,19 @@ while len(guess_states) < 50:
             game_write.goto(state_coordinate[0], state_coordinate[1])
             game_write.write(f"{state}", False, "center", ("Helvetica", 7, "normal"))
 
-screen.exitonclick()
+states_to_learn = {
+    "missed_states":[]
+}
+for us_state in us_states.state.values:
+    if us_state not in guess_states:
+        states_to_learn["missed_states"].append(us_state)
+
+# if empty/(true = not False(False value=None, 0, "", [], {}))
+if not states_to_learn["missed_states"]:
+    with open("./states_to_learn.csv", 'w') as  empty:
+        empty.write("Congratulations! On U.S. States Mastery.\n")
+else:
+    df = pandas.DataFrame(states_to_learn)
+    df.to_csv("./states_to_learn.csv", index=False)
+
+print(states_to_learn)
